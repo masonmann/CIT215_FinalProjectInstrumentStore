@@ -1,0 +1,92 @@
+#app{
+  display:content;
+  flex-wrap:wrap;
+}
+
+ul#list li {
+  display:flex;
+}
+
+.list{
+  list-style-type: none;
+  text-align:right;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+}
+
+.list li{
+    float: left;
+}
+
+ul.ItemList{
+  list-style-type:none;
+  text-align:center;
+  margin: 0;
+  padding: 0;
+}
+
+.card{
+  height:240px;
+  width:240px;
+  position:relative;
+  font-family: Roboto, sans-serif;
+  display:grid;
+  justify-content:center;
+  align-items:center;
+  border-radius:8px;
+  box-shadow:rgba(0,0,0,0.5) 4px 4px 16px;
+  overflow:hidden;
+  margin-left:20px;
+  cursor:pointer;
+  margin-bottom: 10px;
+}
+
+img{
+  height:100px;
+  width:100px;
+}
+
+.PopUp{
+  height:45%;
+  width:45%;
+  left: 30%;
+  position:relative;
+  font-family: Roboto, sans-serif;
+  box-shadow:rgba(0,0,0,0.5) 4px 4px 16px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+.AddItem{
+  height:50%;
+  width:12%;
+  top:25%;
+  left:85%;
+  list-style-type: none;
+  position: absolute;
+  font-family: Roboto, sans-serif;
+  box-shadow:rgba(0,0,0,0.5) 4px 4px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+
+.Fender:hover {
+  background-color:red;
+  color:white;
+}  
+
+.Maton:hover {
+  background-color:blue;
+  color:white;
+}
+
+.Yamaha:hover {
+  background-color:green;
+  color:white;
+}

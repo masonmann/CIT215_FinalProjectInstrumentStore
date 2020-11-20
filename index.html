@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Final Project: Instrument Store</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+ 
+  <ul class = "list">
+    <li><button v-on:click="Remove">Empty Your Cart</button></li>
+    <li><div v-if="!FormDisplay">
+  <button v-on:click="AddItem">Add Item</button>
+</div>
+    </li><p>The total items in the Cart : {{ShoppingCart.length}}</p></li>
+  </ul>
+
+<div v-if="FormDisplay">
+    
+ <ul class = AddItem>
+   <li><input v-model="ItemName" placeholder="Instrument Name"/></li>
+   <li><input v-model="ItemType" placeholder="Instrument Type"/></li>
+   <li><input v-model="ItemCost" placeholder="Instrument Cost"/></li>
+   
+  <li><input type="radio" v-model="ItemBrand"  value="Fender"/>
+    <label>Fender</label></li> 
+  <li><input type="radio" v-model="ItemBrand"  value="Maton"/>
+  <label>Maton</label><li> 
+  <li><input type="radio" v-model="ItemBrand" value="Yamaha"/>
+  <label>Yamaha</label></li>
+  <li><button v-on:click="Submit">Add To Cart</button></li>
+
+    </div>
+  </ul>
+
+  <p style="text-align:center">Instrument Store</p>
+  <p style="text-align:center" v-if="Items.length == 0">The store is now empty</p>
+
+  <div v-if="PopUpDisplay" v-on:click="PopUpDisplay = false">
+    <div class="PopUp">
+      
+      <ul class="ItemList">
+      <li><img v-bind:src="PopUp.Img"></li>
+      <li v-if="PopUp.ItemImage">{{PopUp.Image}}</li>
+      <li>Name: {{PopUp.Name}}</li>
+      <li>Type: {{PopUp.Type}}</li>
+      <li>Price: {{PopUp.Price}}</li>
+      <li>Brand: {{PopUp.Brand}}</li>
+      <button v-on:click = "AddtoCart">Add to Cart</button>
+      </ul>
+    </div>     
+  </div>
+
+    
+<div class ="card" v-for="(item, index) in Items">
+  
+  <div v-bind:class=item.Brand v-on:click="Popup(item)">
+    
+<ul class = "ItemList">
+  <li><img v-bind:src="item.Img"></li>
+  <li v-if="item.ItemImage">{{item.Image}}</li>
+  <li>{{item.Name}}</li>
+  <li>{{item.Price}}</li>
+  <li>{{item.Type}}</li>
+  <li>{{item.Brand}}</li>  
+</ul>   
+  </div>
+    <button v-on:click = "AddtoCart(index)" style="text-align:center">Add to Cart</button>
+</div>
+  
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
